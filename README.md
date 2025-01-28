@@ -31,7 +31,7 @@ This project is a web application that detects a person in real-time using a web
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/real-time-person-blur.git
+   git clone https://github.com/Umair-Farooque/real-time-person-blur.git
    cd real-time-person-blur
    ```
 
