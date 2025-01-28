@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Person Blurring</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:,"> <!-- Prevent browser favicon request -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+</head>
+<body>
+  <h1>Real-Time Person Blurring</h1>
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas"></canvas>
+
+  <script type="module">
+    import { startVideoStream } from './js/video.js';
+    import { loadModel, detectPersons } from './js/detection.js';
+    import { applyBlur } from './js/blur.js';
+
+    const videoElement = document.getElementById('video');
+    const canvasElement = document.getElementById('canvas');
+    const context = canvasElement.getContext('2d');
+
+    async function init() {
+      try {
+        await startVideoStream(videoElement);
+        const model = await loadModel();
+        detectPersons(videoElement, canvasElement, context, model, applyBlur);
+      } catch (error) {
+        console.error('Error initializing the app:', error);
+        alert('Failed to initialize app. Please check the console for details.');
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
