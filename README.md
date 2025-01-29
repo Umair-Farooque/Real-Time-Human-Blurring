@@ -115,7 +115,7 @@ For questions or feedback, feel free to reach out:
 ---
 
 ## Contribution
-If anybody wants to contibute to this project
+If anybody wants to contibute to this project fork this repository and pull changes.
 
 Enjoy blurring people in real-time! 🚀
 
