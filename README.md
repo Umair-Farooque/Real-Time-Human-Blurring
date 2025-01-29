@@ -115,6 +115,7 @@ For questions or feedback, feel free to reach out:
 ---
 
 ## Contribution
+If anybody wants to contibute to this project
 
 Enjoy blurring people in real-time! 🚀
 
